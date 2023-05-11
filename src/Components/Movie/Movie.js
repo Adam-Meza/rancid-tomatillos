@@ -8,7 +8,6 @@ function Movie({ id, title, posterPath, releaseDate, voteAverage }) {
       <h2>{title}</h2>
       <p>Release Date: {releaseDate}</p>
       <p>Rating: {voteAverage}</p>
-      <p>{overview}</p>
     </article>
   );
 }
