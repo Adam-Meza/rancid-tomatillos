@@ -4,6 +4,7 @@ import MovieDetails from './Components/MovieDetails/MovieDetails.js'
 import './Components/MovieContainer/MovieContainer.js'
 import './App.css';
 import React, { Component } from 'react';
+import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 
 class App extends Component {
   constructor() {
@@ -41,6 +42,8 @@ class App extends Component {
     return (
       <main> 
         {/* <Header /> */}
+        <MovieContainer movies={this.state.movies} />
+        {/* add conditional rendering here <MovieDetails/ > */}
         {/* add conditional rendering here <MovieContainer/ > */}
 
       { this.state && <MovieDetails currentMovie = { this.state.currentMovie } /> }
