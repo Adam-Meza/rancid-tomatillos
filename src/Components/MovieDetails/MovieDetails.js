@@ -3,10 +3,7 @@ import './MovieDetails.css'
 
 
 function MovieDetails(props) {
-  if (props.currentMovie) {
     const { title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline } = props.currentMovie
-    console.log(props.currentMovie)
-
     return (
       <section className='individual-container'>
         <section className='background' style = {{ 'backgroundImage': `url(${backdrop_path})` }} >
@@ -31,10 +28,6 @@ function MovieDetails(props) {
         </section>
       </section>
     )
-  }
-
-
-
 
 }
 
