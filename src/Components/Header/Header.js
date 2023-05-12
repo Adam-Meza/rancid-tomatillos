@@ -8,9 +8,7 @@ function Header({backToHomePage, currentMovie}) {
     <header className='header-bar'>
       <h1>Rancid Tomatillos</h1>
       { currentMovie && <button className='button-home' onClick = { backToHomePage }>Home</button>}
-
     </header>
-
   );
 };
 
