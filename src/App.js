@@ -16,8 +16,11 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate = () => {
+    console.log(this.state.currentMovie)
+  }
+
   componentDidMount = () => {
-    this.testStuff() 
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(data => data.json())
       .then(json => this.setState({ movies: json.movies }))
@@ -30,23 +33,19 @@ class App extends Component {
       .then(json => {
         this.setState( { currentMovie: json.movie })
       })
-      .catch(err => console.log(err.message ))
+      .catch(err => console.log( err.message ))
   }
 
-  testStuff () {
-    return this.fetchCurrentMovie(724495)
+  backToHomePage = () => {
+    this.setState({ currentMovie: {} })
   }
 
   render() {
-
     return (
       <main> 
-        <Header currentMovie={this.state.currentMovie} />
-        <MovieContainer movies={this.state.movies} />
-        {/* add conditional rendering here <MovieDetails/ > */}
-        {/* add conditional rendering here <MovieContainer/ > */}
-
-      { this.state && <MovieDetails currentMovie = { this.state.currentMovie } /> }
+        <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+      { !this.state.currentMovie && <MovieContainer movies={this.state.movies} fetchCurrentMovie = { this.fetchCurrentMovie }/>}
+      { this.state.currentMovie && <MovieDetails currentMovie = { this.state.currentMovie } /> }
       </main>
     )
   }
