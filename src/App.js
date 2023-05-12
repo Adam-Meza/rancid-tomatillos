@@ -16,10 +16,6 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate = () => {
-    console.log(this.state.currentMovie)
-  }
-
   componentDidMount = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(data => data.json())
