@@ -1,3 +1,51 @@
-* {
-  border: red 1px solid
+.individual-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: white;
+  background-color: rgba(18, 18, 22, 1);
+  position: relative;
+}
+
+.background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 14px 20px 7px inset;
+}
+
+.body-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 85%;
+  margin: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  background-color: rgba(18, 18, 22, 0.6);
+  position: absolute;
+  top: 15rem;
+}
+
+.poster {
+  width: 200px;
+  height: 300px;
+  margin: 2rem;
+  margin-right: 0;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 2rem;
+  border-radius: 15px;
+}
+
+.info-container p {
+  margin: 0.75rem;
+}
+
+.info-container h4 {
+  text-align: center;
 }

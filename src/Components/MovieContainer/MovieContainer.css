@@ -1,0 +1,8 @@
+.movie-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  color: rgb(198, 222, 65);
+  background-color: rgba(18, 18, 22, 1);
+}
