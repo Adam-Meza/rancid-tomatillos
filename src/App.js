@@ -1,5 +1,5 @@
 import './Components/Movie/Movie.js'
-import './Components/Header/Header.js'
+import Header from './Components/Header/Header.js'
 import MovieDetails from './Components/MovieDetails/MovieDetails.js'
 import './Components/MovieContainer/MovieContainer.js'
 import './App.css';
@@ -11,7 +11,7 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      currentMovie: {},
+      currentMovie: '',
       error: ''
     }
   }
@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       <main> 
-        {/* <Header /> */}
+        <Header currentMovie={this.state.currentMovie} />
         <MovieContainer movies={this.state.movies} />
         {/* add conditional rendering here <MovieDetails/ > */}
         {/* add conditional rendering here <MovieContainer/ > */}
