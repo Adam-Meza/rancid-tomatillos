@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   backToHomePage = () => {
-    this.setState({ currentMovie: {} })
+    this.setState({ currentMovie: '' })
   }
 
   render() {
