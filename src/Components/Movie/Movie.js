@@ -9,7 +9,7 @@ function Movie({ id, title, posterPath, releaseDate, averageRating, fetchCurrent
         <img src={`${posterPath}`} alt={title} />
       </div>
       <h2>{title}</h2>
-      <p>{dayjs(releaseDate).format('YYYY')}  | {averageRating} / 10</p>
+      <p>{ releaseDate } | { averageRating } </p>
     </article>
   );
 }

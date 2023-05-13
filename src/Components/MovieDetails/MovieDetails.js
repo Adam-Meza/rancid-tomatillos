@@ -1,6 +1,6 @@
 import React from "react";
 import './MovieDetails.css'
-
+import PropTypes from 'prop-types'
 
 function MovieDetails(props) {
     const { title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline } = props.currentMovie
@@ -28,9 +28,22 @@ function MovieDetails(props) {
         </section>
       </section>
     )
-
 }
 
-
-
 export default MovieDetails
+
+MovieDetails.propTypes = {
+  currentMovie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    average_rating: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    backdrop_path: PropTypes.string.isRequired, 
+    release_date: PropTypes.string.isRequired,
+    revenue: PropTypes.number.isRequired,
+    overview: PropTypes.string.isRequired,
+    runtime: PropTypes.number.isRequired,
+    budget: PropTypes.number.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    tagline: PropTypes.string.isRequired
+  }).isRequired
+}

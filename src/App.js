@@ -5,6 +5,8 @@ import './Components/MovieContainer/MovieContainer.js'
 import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
+import {cleanMovieDetailsData, cleanAllMoviesData}  from './utilities.js';
+
 
 class App extends Component {
   constructor() {
@@ -19,7 +21,7 @@ class App extends Component {
   componentDidMount = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(data => data.json())
-      .then(json => this.setState({ movies: json.movies }))
+      .then(json => this.setState({ movies: cleanAllMoviesData(json.movies) }))
       .catch(err => this.setState({ error: err.message}))
   }
 
@@ -27,7 +29,7 @@ class App extends Component {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(data => data.json())
       .then(json => {
-        this.setState( { currentMovie: json.movie })
+        this.setState( { currentMovie: cleanMovieDetailsData(json.movie) })
       })
       .catch(err => console.log( err.message ))
   }
