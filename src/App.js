@@ -2,6 +2,7 @@ import './Components/Movie/Movie.js'
 import Header from './Components/Header/Header.js'
 import MovieDetails from './Components/MovieDetails/MovieDetails.js'
 import './Components/MovieContainer/MovieContainer.js'
+import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js'
 import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
@@ -20,9 +21,14 @@ class App extends Component {
 
   componentDidMount = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(data => data.json())
+      .then(response => {
+        if (!response.ok && response.status >= 500) {
+            throw Error('Server error');
+        }
+        return response.json();
+      })
       .then(json => this.setState({ movies: cleanAllMoviesData(json.movies) }))
-      .catch(err => this.setState({ error: err.message}))
+      .catch(err => this.setState({ error: err.message}));
   }
 
   fetchCurrentMovie = (id) => {
@@ -42,8 +48,9 @@ class App extends Component {
     return (
       <main> 
         <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
-      { !this.state.currentMovie && <MovieContainer movies={this.state.movies} fetchCurrentMovie = { this.fetchCurrentMovie }/>}
-      { this.state.currentMovie && <MovieDetails currentMovie = { this.state.currentMovie } /> }
+        { this.state.error && <ErrorMessage error={this.state.error} /> }
+        { (!this.state.currentMovie && !this.state.error) && <MovieContainer movies={this.state.movies} fetchCurrentMovie = { this.fetchCurrentMovie }/>}
+        { (this.state.currentMovie && !this.state.error) && <MovieDetails currentMovie = { this.state.currentMovie } /> }
       </main>
     )
   }
