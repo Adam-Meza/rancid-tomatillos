@@ -7,10 +7,10 @@ export const cleanMovieDetailsData = ({ title, average_rating, poster_path, back
       poster_path: poster_path,
       backdrop_path: backdrop_path, 
       release_date: dayjs(release_date).format('MMMM DD, YYYY'),
-      revenue: `$${ revenue.toLocaleString() }`,
+      revenue: !revenue ? `unknown` : `$${ revenue.toLocaleString() }`,
       overview: overview,
       runtime: `${runtime} minutes` ,
-      budget: `$${ budget.toLocaleString() }`,
+      budget: !budget ? `unknown` : `$${ budget.toLocaleString() }`,
       genres: genres.join(", "),
       tagline: tagline
   }
