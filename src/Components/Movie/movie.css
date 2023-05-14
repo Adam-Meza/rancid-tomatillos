@@ -11,7 +11,7 @@
 }
 
 .movie-card:hover {
-
+  box-shadow: rgb(198, 222, 65) 0px 1px 4px;
   cursor: pointer;
 }
 
