@@ -6,7 +6,7 @@ import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js'
 import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
-import {cleanMovieDetailsData, cleanAllMoviesData}  from './utilities.js';
+import { cleanMovieDetailsData, cleanAllMoviesData}  from './utilities.js';
 
 
 class App extends Component {
@@ -19,17 +19,22 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if (!response.ok && response.status >= 500) {
-            throw Error('Server error');
-        }
-        return response.json();
-      })
-      .then(json => this.setState({ movies: cleanAllMoviesData(json.movies) }))
-      .catch(err => this.setState({ error: err.message}));
+  componentDidMount = async () => {
+    try {
+      const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+
+      if (!response.ok && response.status >= 500) {
+        throw Error('Server error');
+      }
+
+      const json = await response.json()
+      this.setState({ movies: cleanAllMoviesData(json.movies) })
+
+    } catch(err) {
+      this.setState({ error: err.message})
+    }
   }
+
 
   fetchCurrentMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
