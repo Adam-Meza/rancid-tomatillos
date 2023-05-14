@@ -35,15 +35,15 @@ export default MovieDetails
 MovieDetails.propTypes = {
   currentMovie: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    average_rating: PropTypes.number.isRequired,
+    average_rating: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     backdrop_path: PropTypes.string.isRequired, 
     release_date: PropTypes.string.isRequired,
-    revenue: PropTypes.number.isRequired,
+    revenue: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
-    runtime: PropTypes.number.isRequired,
-    budget: PropTypes.number.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string),
+    runtime: PropTypes.string.isRequired,
+    budget: PropTypes.string.isRequired,
+    genres: PropTypes.string,
     tagline: PropTypes.string.isRequired
   }).isRequired
 }

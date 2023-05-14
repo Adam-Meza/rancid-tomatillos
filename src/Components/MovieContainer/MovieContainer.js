@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from '../Movie/Movie';
+import PropTypes from 'prop-types'
 import './MovieContainer.css';
 
 function MovieContainer( {movies, fetchCurrentMovie} ) {
@@ -25,5 +26,18 @@ function MovieContainer( {movies, fetchCurrentMovie} ) {
     </section>
   );
 }
+
+MovieContainer.propTypes = {
+  fetchCurrentMovie: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string,
+      release_date: PropTypes.string.isRequired,
+      average_rating: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
 
 export default MovieContainer;
