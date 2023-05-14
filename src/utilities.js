@@ -6,7 +6,7 @@ export const cleanMovieDetailsData = ({ title, average_rating, poster_path, back
       average_rating: ` ${average_rating} / 10`,
       poster_path: poster_path,
       backdrop_path: backdrop_path, 
-      release_date: dayjs(release_date).format('YYYY'),
+      release_date: dayjs(release_date).format('MMMM DD, YYYY'),
       revenue: `$${ revenue.toLocaleString() }`,
       overview: overview,
       runtime: `${runtime} minutes` ,
