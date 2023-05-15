@@ -35,14 +35,14 @@ class App extends Component {
     }
   }
 
-
-  fetchCurrentMovie = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(data => data.json())
-      .then(json => {
-        this.setState( { currentMovie: cleanMovieDetailsData(json.movie) })
-      })
-      .catch(err => console.log( err.message ))
+  fetchCurrentMovie = async (id) => {
+    try {
+      const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`);
+      const json = await response.json();
+      this.setState({ currentMovie: cleanMovieDetailsData(json.movie) });
+    } catch(err) {
+      console.log( err.message );
+    }
   }
 
   backToHomePage = () => {
