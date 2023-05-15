@@ -6,11 +6,11 @@ export const cleanMovieDetailsData = ({ title, average_rating, poster_path, back
       average_rating: ` ${average_rating} / 10`,
       poster_path: poster_path,
       backdrop_path: backdrop_path, 
-      release_date: dayjs(release_date).format('YYYY'),
-      revenue: `$${ revenue.toLocaleString() }`,
+      release_date: dayjs(release_date).format('MMMM DD, YYYY'),
+      revenue: !revenue ? `unknown` : `$${ revenue.toLocaleString() }`,
       overview: overview,
       runtime: `${runtime} minutes` ,
-      budget: `$${ budget.toLocaleString() }`,
+      budget: !budget ? `unknown` : `$${ budget.toLocaleString() }`,
       genres: genres.join(", "),
       tagline: tagline
   }

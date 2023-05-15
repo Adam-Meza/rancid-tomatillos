@@ -18,8 +18,8 @@ function MovieDetails(props) {
               <ul>
                 <li>Average Rating: { average_rating }</li>
                 <li>Release Date: { release_date }</li>
+                <li>Runtime: { runtime }</li>
                 <li>Revenue: { revenue }</li>
-                <li>Runtime: { runtime } minutes</li>
                 <li>Budget: { budget }</li>
                 <li>Genre: { genres }</li>
               </ul>

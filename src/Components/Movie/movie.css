@@ -4,18 +4,19 @@
   align-items: center;
   margin: 1.5rem;
   width: 240px;
-  height: 500px;
+  min-height: 500px;
   max-height: fit-content;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
 .movie-card:hover {
-
+  box-shadow: rgb(198, 222, 65) 0px 1px 4px;
   cursor: pointer;
 }
 
 .image-cont {
+  width: 100%;
   height: 70%;
 }
 
@@ -33,4 +34,20 @@ h2 {
 p {
   margin: 0.25rem 0 0.75rem 0;
   color: white;
+}
+
+.rating-row {
+  display: flex;
+}
+
+.star {
+  width: 1rem;
+  height: 1rem;
+  padding: 0.25rem;
+  padding-right: 0.5rem;
+  border-radius: 0;
+}
+
+.rating-text {
+  display: inline;
 }
