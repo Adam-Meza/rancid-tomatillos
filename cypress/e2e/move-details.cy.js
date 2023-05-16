@@ -21,6 +21,7 @@ describe( 'Tests for Single Movie Details Display', () =>{
 
   it("Should be able to get to Movie Details from the Main View", ()=> {
     cy.get('#436270').first().click()
+    .get('.individual-container')
   })
 
   it("Should Show All the Movie Details", ()=>{
