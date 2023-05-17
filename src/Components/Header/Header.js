@@ -8,7 +8,7 @@ function Header({backToHomePage, currentMovie}) {
   return (
     <header className='header-bar'>
       <h1>Rancid Tomatillos</h1>
-      { currentMovie && <NavLink to="/" className='button-home' onClick={ () => backToHomePage() }>Home</NavLink>}
+      <NavLink to="/" className='button-home' onClick={ () => backToHomePage() }>Home</NavLink>
     </header>
   );
 };

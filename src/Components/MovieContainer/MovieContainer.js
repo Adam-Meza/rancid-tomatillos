@@ -3,7 +3,7 @@ import Movie from '../Movie/Movie';
 import PropTypes from 'prop-types'
 import './MovieContainer.css';
 
-function MovieContainer( {movies, fetchCurrentMovie} ) {
+function MovieContainer( {movies} ) {
   const movieCards = movies.map(movie => {
     return (
         <Movie
@@ -13,7 +13,6 @@ function MovieContainer( {movies, fetchCurrentMovie} ) {
             posterPath={movie.poster_path}
             releaseDate={movie.release_date}
             averageRating={movie.average_rating}
-            fetchCurrentMovie={fetchCurrentMovie}
           />
     );
   });
