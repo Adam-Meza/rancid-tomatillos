@@ -1,6 +1,4 @@
-import React from 'react';
-import movies from './movies-test-data.js'
-{/* <reference types="cypress" /> */}
+import movies from './movies-test-data.js';
 
 describe('Tests for the main view displaying a library of movies', () => {
   beforeEach(() => {
