@@ -17,8 +17,9 @@ describe('Tests for the main view displaying a library of movies', () => {
     cy.get('h1').should('have.text', 'Rancid Tomatillos');
   });
 
-  it('Should display a movie container with all the movies', () => {
-    cy.get('.movie-container').children().should('have.length', 6);
+  it('Should display a movie container with all the movies when on the root URL', () => {
+    cy.url().should('eq', 'http://localhost:3000/')
+      .get('.movie-container').children().should('have.length', 6);
   });
 
   it('Should display movie cards with the movie title, image, release date, and average rating', () => {
@@ -27,7 +28,6 @@ describe('Tests for the main view displaying a library of movies', () => {
     cy.get('.rating-text').first().contains('p', '4 / 10');
     cy.get('.movie-card').first().contains('p', '2022');
   });
-
 });
 
 describe('Tests for navigating to an individual movie details', () => {
