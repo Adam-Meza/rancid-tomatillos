@@ -1,11 +1,11 @@
 import React from 'react';
-import dayjs from 'dayjs'
 import './movie.css';
 import star from './star.png';
+import { NavLink } from 'react-router-dom';
 
 function Movie({ id, title, posterPath, releaseDate, averageRating, fetchCurrentMovie }) {
   return (
-    <article className="movie-card" id={id} onClick={ () => fetchCurrentMovie(id) } >
+    <NavLink to={`/movies/${id}`} className="movie-card" id={id} onClick={ () => fetchCurrentMovie(id) } >
       <div className='image-cont'>
         <img src={`${posterPath}`} alt={title} />
       </div>
@@ -15,7 +15,7 @@ function Movie({ id, title, posterPath, releaseDate, averageRating, fetchCurrent
           <img className='star' src={star} alt='Rating star icon'/>
           <p className='rating-text'>{ averageRating }</p>
         </div>
-    </article>
+    </NavLink>
   );
 }
 

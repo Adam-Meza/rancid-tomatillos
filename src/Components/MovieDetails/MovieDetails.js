@@ -3,7 +3,7 @@ import './MovieDetails.css'
 import PropTypes from 'prop-types'
 
 function MovieDetails(props) {
-    const { title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline } = props.currentMovie
+  const { title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline } = props.currentMovie
     return (
       <section className='individual-container'>
         <section className='background' style = {{ 'backgroundImage': `url(${backdrop_path})` }} >

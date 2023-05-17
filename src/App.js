@@ -7,6 +7,7 @@ import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import { cleanMovieDetailsData, cleanAllMoviesData}  from './utilities.js';
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min.js'
 
 
 class App extends Component {
@@ -53,9 +54,21 @@ class App extends Component {
     return (
       <main> 
         <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
-        { this.state.error && <ErrorMessage error={this.state.error} /> }
-        { (!this.state.currentMovie && !this.state.error) && <MovieContainer movies={this.state.movies} fetchCurrentMovie = { this.fetchCurrentMovie }/>}
-        { (this.state.currentMovie && !this.state.error) && <MovieDetails currentMovie = { this.state.currentMovie } /> }
+        <Switch>
+          <Route exact path='/' render={() => <MovieContainer movies={this.state.movies} fetchCurrentMovie = { this.fetchCurrentMovie }/>} />
+          <Route exact path='/error' render={() => <ErrorMessage error={this.state.error} />} />
+          <Route exact path='/movies/:id' render={() => {
+            return <MovieDetails currentMovie = { this.state.currentMovie } />
+          }} />
+          {/* <Route path='/movies/:id' render={({ match }) => {
+            const movie = this.state.movies.find(movie => movie.id === parseInt(match.params.id));
+            if (!movie) {
+              return (<div>This movie does not exist! </div>);  
+            }
+            console.log("happening")
+            return <MovieDetails currentMovie={this.state.currentMovie} />
+          }} /> */}
+        </Switch>
       </main>
     )
   }
