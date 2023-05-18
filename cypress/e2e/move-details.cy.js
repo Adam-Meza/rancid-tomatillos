@@ -21,8 +21,14 @@ describe( 'Tests for Single Movie Details Display', () =>{
 
   it("Should be able to get to Movie Details from the Main View", ()=> {
     cy.get('#436270').first().click()
-    .get('.individual-container')
+    cy.url().should('eq', 'http://localhost:3000/movies/436270')
   })
+
+  it('Should display a header with the title of the app and a button to return to the main page', () => {
+    cy.get('#436270').first().click()
+    cy.get('h1').should('have.text', 'Rancid Tomatillos');
+    cy.get('.button-home').should('have.text', 'Home')
+  });
 
   it("Should Show All the Movie Details", ()=>{
     cy.get('#436270').first().click()
@@ -42,6 +48,18 @@ describe( 'Tests for Single Movie Details Display', () =>{
     cy.contains('Revenue').contains('$384,571,691')
     cy.contains('Budget').contains('$420')
     cy.contains('Genre').contains('Action, Fantasy, Science Fiction')
+  })
+
+  it("Should be able to return to the main page using the home button", ()=>{
+    cy.get('#436270').first().click()
+    cy.get('.button-home').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+
+  it("Should be able to return to the main page using the back button on the browser", ()=>{
+    cy.get('#436270').first().click()
+    cy.go('back')
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 })
 

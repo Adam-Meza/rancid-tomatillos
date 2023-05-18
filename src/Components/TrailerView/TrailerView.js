@@ -17,6 +17,7 @@ export class TrailerView extends Component {
       }
 
       const json = await response.json()
+      console.log(json)
       const trailerKey = json.videos.find(video => video.type === 'Trailer')
       
       this.setState({ trailerKey: trailerKey }) 
@@ -35,7 +36,7 @@ export class TrailerView extends Component {
       <iframe
       width="560"
       height="315"
-      src={`https://www.youtube.com/embed/${this.state.trailerKey}`}
+      src={`https://www.youtube.com/embed/${this.state.trailerKey.key}`}
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
