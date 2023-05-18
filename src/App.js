@@ -24,7 +24,7 @@ class App extends Component {
     try {
       const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
 
-      if (!response.ok && response.status >= 500) {
+      if (!response.ok) {
         throw Error('Server error');
       }
 
@@ -41,11 +41,13 @@ class App extends Component {
   }
 
   render() {
+    if(this.state.error) {
+      return <ErrorMessage error={this.state.error} />
+    }
     return (
       <main> 
         <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
         <Switch>
-          {/* <Route exact path='/error' render={() => <ErrorMessage error={this.state.error} />} /> */}
           <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id}/>}/>
           <Route exact path='/movies/:id' component={MovieDetails} />
           <Route exact path='/' render={() => <MovieContainer movies={this.state.movies} />} />

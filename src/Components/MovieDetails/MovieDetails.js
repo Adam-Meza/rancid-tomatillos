@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './MovieDetails.css';
 import PropTypes from 'prop-types';
 import { cleanMovieDetailsData }  from '../../utilities.js';
-import  { NavLink } from 'react-router-dom';
+import  { NavLink, Redirect } from 'react-router-dom';
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMovie: null,
+      currentMovie: {},
+      error: false,
     };
   }
 
@@ -26,11 +27,10 @@ class MovieDetails extends Component {
     try {
       const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.match.params.id}`)
       const json = await response.json()
-      this.setState({ currentMovie: cleanMovieDetailsData(json.movie) })
-
-      if (!response.ok && response.status >= 500) {
-        throw Error('Server error');
+      if (response.status !== 200) {
+        this.state.error = true;
       }
+      this.setState({ currentMovie: cleanMovieDetailsData(json.movie) })
 
     } catch {
       console.log(Error)
@@ -44,9 +44,8 @@ class MovieDetails extends Component {
   render() {
     const { currentMovie } = this.state;
 
-    if (!currentMovie) {
-      // add better loading
-      return <div>Loading...</div>;
+    if (this.state.error) {
+      return <Redirect to='/*' />
     }
 
     const { id, title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline } = currentMovie;
