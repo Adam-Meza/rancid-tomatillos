@@ -1,7 +1,9 @@
 import dayjs from "dayjs"
 
-export const cleanMovieDetailsData = ({ title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline }) => {
+export const cleanMovieDetailsData = ({ id, title, average_rating, poster_path, backdrop_path, release_date, revenue, overview, runtime, budget, genres, tagline }) => {
+
   return {
+      id: id,
       title: title,
       average_rating: ` ${average_rating} / 10`,
       poster_path: poster_path,
