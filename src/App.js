@@ -46,7 +46,7 @@ class App extends Component {
         <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
         <Switch>
           {/* <Route exact path='/error' render={() => <ErrorMessage error={this.state.error} />} /> */}
-          <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id}/>}/>
+          <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id} movies={this.state.movies}/>}/>
           <Route exact path='/movies/:id' component={MovieDetails} />
           <Route exact path='/' render={() => <MovieContainer movies={this.state.movies} />} />
           <Route path="*" component={NotFound} />
