@@ -1,4 +1,5 @@
-import  React, { Component } from 'react'
+import  React, { Component } from 'react';
+import './TrailerView.css';
 
 export class TrailerView extends Component {
   constructor(props) {
@@ -33,14 +34,15 @@ export class TrailerView extends Component {
 
   render() {
     return (
-      <iframe
-      width="560"
-      height="315"
-      src={`https://www.youtube.com/embed/${this.state.trailerKey.key}`}
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+      <div className="video-container">
+        <iframe
+          className="video-display"
+          src={`https://www.youtube.com/embed/${this.state.trailerKey.key}`}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+      ></iframe>
+          </div>
     )
   }
 }
