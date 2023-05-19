@@ -22,6 +22,7 @@ h1 {
   background-color: rgba(203, 255, 77, 0.2);
   font-weight: bold;
   font-size: medium;
+  line-height: 2.25rem;
 }
 
 .button-home:hover {
