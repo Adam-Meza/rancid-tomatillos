@@ -42,7 +42,10 @@ class App extends Component {
 
   render() {
     if(this.state.error) {
-      return <ErrorMessage error={this.state.error} />
+      return <>
+          <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+          <ErrorMessage error={this.state.error} />
+        </>
     }
     return (
       <main> 
@@ -56,7 +59,6 @@ class App extends Component {
       </main>
     )
   }
-
 }
 
 export default App;
