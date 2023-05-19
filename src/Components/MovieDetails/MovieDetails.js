@@ -69,7 +69,9 @@ class MovieDetails extends Component {
               <li>Budget: { budget }</li>
               <li>Genre: { genres }</li>
             </ul>
-            { true === true && <NavLink to={`/movies/${id}/trailer`} ><button>Watch Trailer!</button></NavLink>}
+            { true === true && <NavLink to={`/movies/${id}/trailer`}
+                style={{ textDecoration: 'inherit'}}
+                className='button-trailer' >Watch Trailer!</NavLink> }
           </div>
         </div>
       </section>

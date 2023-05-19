@@ -49,3 +49,22 @@
 .info-container h4 {
   text-align: center;
 }
+
+.button-trailer {
+  height: 2.25rem;
+  width: fit-content;
+  margin: 1.5rem;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 1rem;
+  color: rgb(198, 222, 65);
+  background-color: rgba(83,96,57,0.8);
+  font-weight: bold;
+  font-size: medium;
+  line-height: 2.25rem;
+}
+
+.button-trailer:hover {
+  box-shadow: rgb(198, 222, 65) 0px 1px 4px;
+  cursor: pointer;
+}
