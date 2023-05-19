@@ -5,7 +5,6 @@ import './Components/MovieContainer/MovieContainer.js';
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import { TrailerView } from './Components/TrailerView/TrailerView.js';
-import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import { cleanAllMoviesData}  from './utilities.js';
