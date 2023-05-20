@@ -17,7 +17,7 @@ class App extends Component {
       movies: [],
       error: ''
     }
-  }
+  };
 
   componentDidMount = async () => {
     try {
@@ -33,22 +33,18 @@ class App extends Component {
     } catch(err) {
       this.setState({ error: err.message})
     }
-  }
-
-  backToHomePage = () => {
-    this.setState({ currentMovie: '' })
-  }
+  };
 
   render() {
     if(this.state.error) {
       return <>
-          <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+          <Header/>
           <ErrorMessage error={this.state.error} />
         </>
-    }
+    };
     return (
       <main> 
-        <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+        <Header/>
         <Switch>
           <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id}/>}/>
           <Route exact path='/movies/:id' component={MovieDetails} />
@@ -56,8 +52,8 @@ class App extends Component {
           <Route path="*" component={NotFound} />
         </Switch>
       </main>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;
