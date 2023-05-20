@@ -28,17 +28,13 @@ class MovieDetails extends Component {
       const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.match.params.id}`)
       const json = await response.json()
       if (response.status !== 200) {
-        this.state.error = true;
+        this.setState({ error: true }) 
       }
       this.setState({ currentMovie: cleanMovieDetailsData(json.movie) })
 
     } catch {
       console.log(Error)
     }
-  }
-
-  fetchTrailer() {
-    
   }
 
   render() {
@@ -69,9 +65,9 @@ class MovieDetails extends Component {
               <li>Budget: { budget }</li>
               <li>Genre: { genres }</li>
             </ul>
-            { true === true && <NavLink to={`/movies/${id}/trailer`}
+            <NavLink to={`/movies/${id}/trailer`}
                 style={{ textDecoration: 'inherit'}}
-                className='button-trailer' >Watch Trailer!</NavLink> }
+                className='button-trailer'>Watch Trailer!</NavLink>
           </div>
         </div>
       </section>

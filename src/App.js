@@ -1,13 +1,12 @@
 import './Components/Movie/Movie.js';
 import Header from './Components/Header/Header.js';
 import MovieDetails from './Components/MovieDetails/MovieDetails.js';
-import './Components/MovieContainer/MovieContainer.js';
+import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import { TrailerView } from './Components/TrailerView/TrailerView.js';
-import React, { Component } from 'react';
-import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import { cleanAllMoviesData}  from './utilities.js';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min.js';
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
       movies: [],
       error: ''
     }
-  }
+  };
 
   componentDidMount = async () => {
     try {
@@ -33,22 +32,18 @@ class App extends Component {
     } catch(err) {
       this.setState({ error: err.message})
     }
-  }
-
-  backToHomePage = () => {
-    this.setState({ currentMovie: '' })
-  }
+  };
 
   render() {
     if(this.state.error) {
       return <>
-          <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+          <Header/>
           <ErrorMessage error={this.state.error} />
         </>
-    }
+    };
     return (
       <main> 
-        <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+        <Header/>
         <Switch>
           <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id}/>}/>
           <Route exact path='/movies/:id' component={MovieDetails} />
@@ -56,8 +51,8 @@ class App extends Component {
           <Route path="*" component={NotFound} />
         </Switch>
       </main>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;
