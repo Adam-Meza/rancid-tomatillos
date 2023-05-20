@@ -28,7 +28,7 @@ class MovieDetails extends Component {
       const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.match.params.id}`)
       const json = await response.json()
       if (response.status !== 200) {
-        this.state.error = true;
+        this.setState({ error: true }) 
       }
       this.setState({ currentMovie: cleanMovieDetailsData(json.movie) })
 

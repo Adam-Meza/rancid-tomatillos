@@ -43,6 +43,7 @@ export class TrailerView extends Component {
     return (
       <div className="video-container">
         <iframe
+          title='Movie trailer'
           className="video-display"
           src={`https://www.youtube.com/embed/${this.state.trailerKey.key}`}
           frameBorder="0"
