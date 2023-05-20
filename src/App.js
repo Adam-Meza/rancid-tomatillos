@@ -5,7 +5,6 @@ import './Components/MovieContainer/MovieContainer.js';
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import { TrailerView } from './Components/TrailerView/TrailerView.js';
-import './App.css';
 import React, { Component } from 'react';
 import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import { cleanAllMoviesData}  from './utilities.js';
@@ -42,7 +41,10 @@ class App extends Component {
 
   render() {
     if(this.state.error) {
-      return <ErrorMessage error={this.state.error} />
+      return <>
+          <Header currentMovie={this.state.currentMovie} backToHomePage = { this.backToHomePage } />
+          <ErrorMessage error={this.state.error} />
+        </>
     }
     return (
       <main> 
@@ -56,7 +58,6 @@ class App extends Component {
       </main>
     )
   }
-
 }
 
 export default App;

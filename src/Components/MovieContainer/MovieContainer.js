@@ -25,7 +25,6 @@ function MovieContainer( {movies} ) {
 }
 
 MovieContainer.propTypes = {
-  fetchCurrentMovie: PropTypes.func.isRequired,
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

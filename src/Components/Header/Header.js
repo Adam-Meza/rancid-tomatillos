@@ -8,7 +8,9 @@ function Header({backToHomePage, currentMovie}) {
   return (
     <header className='header-bar'>
       <h1>Rancid Tomatillos</h1>
-      <NavLink to="/" className='button-home' onClick={ () => backToHomePage() }>Home</NavLink>
+      <NavLink to="/" 
+        style={{ color: 'inherit', textDecoration: 'inherit'}}
+        className='button-home' onClick={ () => backToHomePage() }>Home</NavLink>
     </header>
   );
 };
