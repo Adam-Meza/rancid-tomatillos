@@ -18,7 +18,6 @@ export class TrailerView extends Component {
       }
 
       const json = await response.json()
-      console.log(json)
       const trailerKey = json.videos.find(video => video.type === 'Trailer')
       
       this.setState({ trailerKey: trailerKey }) 
