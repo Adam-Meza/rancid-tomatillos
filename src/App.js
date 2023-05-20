@@ -1,13 +1,12 @@
 import './Components/Movie/Movie.js';
 import Header from './Components/Header/Header.js';
 import MovieDetails from './Components/MovieDetails/MovieDetails.js';
-import './Components/MovieContainer/MovieContainer.js';
+import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import { TrailerView } from './Components/TrailerView/TrailerView.js';
-import React, { Component } from 'react';
-import MovieContainer from './Components/MovieContainer/MovieContainer.js';
 import { cleanAllMoviesData}  from './utilities.js';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min.js';
 
 class App extends Component {

@@ -37,10 +37,6 @@ class MovieDetails extends Component {
     }
   }
 
-  fetchTrailer() {
-    
-  }
-
   render() {
     const { currentMovie } = this.state;
 
