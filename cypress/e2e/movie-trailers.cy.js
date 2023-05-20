@@ -33,10 +33,25 @@ describe( 'Tests for Movie Trailers functionality', () => {
       .get('iframe').should('have.attr', 'src', 'https://www.youtube.com/embed/3RDaPV_rJ1Y')
   });
 
+  it('Should display an error message if the trailer cannot be found', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos', {
+      statusCode: 500
+    })
+    cy.get('.button-trailer').click()
+    cy.get('.no-trailer').should('have.text', 'Sorry, that movie trailer is not available.')
+  });
+
   it('Should be able to return to the movie details page from the movie trailer page by using the browser back arrow', () => {
     cy.get('.button-trailer').click()
       .url().should('eq', 'http://localhost:3000/movies/436270/trailer')
       .go('back')
       .url().should('eq', 'http://localhost:3000/movies/436270')
+  });
+
+  it('Should be able to return to the main page using the home button', () => {
+    cy.get('.button-trailer').click()
+      .url().should('eq', 'http://localhost:3000/movies/436270/trailer')
+    cy.get('.button-home').click()
+      .url().should('eq', 'http://localhost:3000/')
   });
 })

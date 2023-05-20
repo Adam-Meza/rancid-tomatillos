@@ -33,6 +33,14 @@ export class TrailerView extends Component {
   }
 
   render() {
+    if(!this.state.trailerKey.key) {
+      return <>
+        <div className="video-container">
+          <p className='no-trailer'>Sorry, that movie trailer is not available.</p>
+        </div>
+      </>
+    };
+
     return (
       <div className="video-container">
         <iframe
