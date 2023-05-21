@@ -1,65 +1,66 @@
-# Getting Started with Create React App
+# Rotten Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+A web application designed to allow users to view a library of films and to select films to view further details and trailers.
 
-## Available Scripts
+## Preview of App
+![demo](https://i.gyazo.com/c083fa97a774489458135b1a2d8d963a.gif)
 
-In the project directory, you can run:
+## Technologies Used
+### Core
+- Javascript
+- CSS & HTML
+- React
+- React Router
+- React PropTypes
+- Cypress End-to-End Testing
+- Webpack module bundler
+- Fetch API
+- Mocha Javascript testing framework and Chai assertion library
 
-### `npm start`
+### Other
+- Git/GitHub
+- GitHub project board
+- Figma and Adobe Illustrator for wireframing and vector graphics
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Guide
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Local Setup
+1. Fork this repository to your GitHub account.
+2. Copy SSH key on GitHub inside the code dropdown.
+3. Using the terminal, run git clone [SSH key here].
+4. cd into the repository.
+5. Run npm install 
+6. Run npm start
+7. Click the hyperlink where the project is running to launch the application in the web browser or enter http://localhost:3000/ into your web browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Specification and Background
+[Project Spec and Rubric](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-### `npm run build`
+This application was developed for the [Turing School of Software and Design's](https://frontend.turing.edu/) Module 3. The project was designed to build and test competency in the fundamentals of React, creating multi-page React web applications using Router, and implementing end-to-end testing using Cypress.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+The app presents users with a dashboard of movies pulled from an API of movie data. Users are then able to select specific movies to view further details about them and their trailers.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Tiala Young - [GitHub](https://github.com/tialaaa) | [LinkedIn](https://www.linkedin.com/in/tialayoung/)
 
-### `npm run eject`
+- John Featherstone - [GitHub](https://github.com/JWFeatherstone) | [LinkedIn](https://www.linkedin.com/in/john-w-featherstone/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Adam Meza - [GitHub](https://github.com/Adam-Meza) | [LinkedIn](https://www.linkedin.com/in/adam-meza/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Wins and Challanges
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Wins:
+- Worked quickly and efficiently as an asynchronous team by establishing and adhering to robust communication and working norms, completing all project deliverables ahead of schedule and giving each team member sufficient time to practice the many new topics involved.
+- Sucessfully redesigning the app to use React Router to provide a multi-page UX.
+- Deepened the groups' understanding of React fundamentals, particularly component architecture and using props.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Challenges:
+- Refactoring the code to replace the original, conditional rendering logic with React Router to create a multi-page UX initially proved difficult. Stepping back and reviewing the structure of our components and how data was flowing between them was particularly helpful in resolving this challenge.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
