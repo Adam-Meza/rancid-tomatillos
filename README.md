@@ -4,7 +4,7 @@
 A web application designed to allow users to view a library of films and to select films to view further details and trailers.
 
 ## Preview of App
-![demo](https://i.gyazo.com/c083fa97a774489458135b1a2d8d963a.gif)
+![Image from Gyazo](https://i.gyazo.com/c083fa97a774489458135b1a2d8d963a.gif)
 
 ## Technologies Used
 ### Core
@@ -60,12 +60,3 @@ The app presents users with a dashboard of movies pulled from an API of movie da
 
 ### Challenges:
 - Refactoring the code to replace the original, conditional rendering logic with React Router to create a multi-page UX initially proved difficult. Stepping back and reviewing the structure of our components and how data was flowing between them was particularly helpful in resolving this challenge.
-
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
