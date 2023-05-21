@@ -7,7 +7,7 @@ import NotFound from './Components/NotFound/NotFound.js';
 import { TrailerView } from './Components/TrailerView/TrailerView.js';
 import { cleanAllMoviesData}  from './utilities.js';
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min.js';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -47,7 +47,8 @@ class App extends Component {
         <Switch>
           <Route exact path='/movies/:id/trailer' render={({match}) => <TrailerView movieId={match.params.id}/>}/>
           <Route exact path='/movies/:id' component={MovieDetails} />
-          <Route exact path='/' render={() => <MovieContainer movies={this.state.movies} />} />
+          <Route exact path='/' render={() => 
+          <MovieContainer movies={this.state.movies} />} />
           <Route path="*" component={NotFound} />
         </Switch>
       </main>
