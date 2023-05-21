@@ -4,7 +4,7 @@
 A web application designed to allow users to view a library of films and to select films to view further details and trailers.
 
 ## Preview of App
-![Image from Gyazo](https://i.gyazo.com/c083fa97a774489458135b1a2d8d963a.gif)
+![demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGI2MTJkZTZlNmJiODI5Y2JhNWNhNTA5OTg3YTE2Yzk2OThlNDM0MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/N1VdTDqiHJluyMVlDb/giphy.gif)
 
 ## Technologies Used
 ### Core
