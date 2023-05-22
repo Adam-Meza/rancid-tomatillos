@@ -56,7 +56,7 @@ The app presents users with a dashboard of movies pulled from an API of movie da
 ### Wins:
 - Worked quickly and efficiently as an asynchronous team by establishing and adhering to robust communication and working norms, completing all project deliverables ahead of schedule and giving each team member sufficient time to practice the many new topics involved.
 - Sucessfully redesigning the app to use React Router to provide a multi-page UX.
-- Deepened the groups' understanding of React fundamentals, particularly component architecture and using props.
+- Deepened the group's understanding of React fundamentals, particularly component architecture and using props.
 
 ### Challenges:
 - Refactoring the code to replace the original, conditional rendering logic with React Router to create a multi-page UX initially proved difficult. Stepping back and reviewing the structure of our components and how data was flowing between them was particularly helpful in resolving this challenge.
